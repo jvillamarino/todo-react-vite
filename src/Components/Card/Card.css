@@ -1,0 +1,57 @@
+.card {
+  @apply flex flex-auto flex-col relative bg-white overflow-hidden transform z-0 rounded-2xl gap-y-5;
+  width: 300px;
+  height: 100%;
+  min-height: 600px;
+  transition: all 0.3s;
+}
+
+.container-grid:hover .card {
+  transform: scale(0.9);
+  filter: blur(20px);
+  opacity: 0.5;
+}
+
+.container-grid .card:hover {
+  @apply scale-105 rounded-br-sm rounded-tr-3xl rounded-tl-sm rounded-bl-3xl z-10;
+  filter: blur(0);
+  opacity: 1;
+}
+
+.card-header {
+  @apply relative w-full h-full bg-black text-center mb-1 border-none;
+  clip-path: circle(180px at center 0);
+  /* clip-path: circle(250px at top); */
+}
+
+.card-header-title {
+  @apply block bg-clip-text text-transparent bg-gradient-to-r from-white to-white py-10;
+  @apply bg-pink-500;
+}
+
+.card-body {
+  @apply flex flex-auto flex-col p-5 absolute bottom-3 text-center;
+}
+
+.card-body p {
+  @apply text-gray-400;
+}
+
+.card-body a {
+  @apply relative inline-block py-2.5 px-5 text-white rounded-full mt-5 shadow-lg hover:opacity-60 cursor-pointer;
+}
+
+.card:nth-child(1) .card-header,
+.card:nth-child(1) .card-body a {
+  @apply bg-gradient-to-tr from-purple-800 to-blue-200;
+}
+
+.card:nth-child(2) .card-header,
+.card:nth-child(2) .card-body a {
+  @apply bg-gradient-to-br from-white to-pink-700;
+}
+
+.card:nth-child(3) .card-header,
+.card:nth-child(3) .card-body a {
+  @apply bg-gradient-to-br from-pink-700 to-indigo-200;
+}
